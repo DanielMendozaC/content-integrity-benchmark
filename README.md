@@ -42,13 +42,13 @@ Semantic defense, adaptive attacks, 3 runs (`results/reference_results.json`):
 
 | Model | Provider | Base ASR | Detection | Residual ASR | Clean FP |
 |---|---|---|---|---|---|
-| Haiku 4.5 | Anthropic | 100% | 72% | 28% | 7% |
+| Haiku 4.5 | Anthropic | 100% | 80% | 20% | 2% |
 | GPT-4o | OpenAI | 94% | 88% | 11% | 0% |
 | Sonnet 4.5 | Anthropic | 100% | 92% | 8% | 0% |
 | GPT-5 | OpenAI | 86% | 100% | 0% | 8% |
 | Opus 4.8 | Anthropic | 92% | 100% | 0% | 5% |
 
-The attack lands on nearly every model of both providers. The surface defense catches the `plain` attacks fully but collapses on `adaptive` ones. The semantic defense survives, and residual risk falls from 28 percent on the weakest model to 0 percent on the strongest, across both providers. Runs are noisy (3 per cell); read the numbers as trends.
+The attack lands on nearly every model of both providers. The surface defense catches the `plain` attacks fully but collapses on `adaptive` ones. The semantic defense survives, and residual risk falls from about 20 percent on the weakest model to 0 percent on the strongest, across both providers. Anthropic rows are over 10 runs (Haiku std ~4, Sonnet stable); OpenAI rows are 3 runs and will be expanded.
 
 ## Bring your own defense or model
 
