@@ -1,12 +1,12 @@
 {
-  "description": "Reference results, semantic (dual extraction) defense, 12 attacks and 20 clean texts. Anthropic models are averaged over 10 runs, OpenAI models over 3 (to be expanded). residual_ASR is the fraction of adaptive attacks that both landed and evaded the defense (lower is better). The surface defense catches plain attacks fully but collapses to near zero detection on adaptive attacks.",
+  "description": "Reference results, semantic (dual extraction) defense, 12 attacks and 20 clean texts. All five models are averaged over 10 runs. residual_ASR is the fraction of adaptive attacks that both landed and evaded the defense (lower is better). The surface defense catches plain attacks fully but collapses to near zero detection on adaptive attacks.",
   "metric_note": "base_ASR = attack landed on the standard extraction; detection = of landed attacks, fraction flagged; residual_ASR = landed and evaded; fp = clean texts wrongly flagged.",
   "semantic_defense": {
     "Haiku 4.5 (Anthropic)":  {"adaptive": {"base_ASR": 100, "detection": 80,  "residual_ASR": 20}, "plain": {"base_ASR": 97,  "detection": 100, "residual_ASR": 0}, "fp": 2},
-    "GPT-4o (OpenAI)":        {"adaptive": {"base_ASR": 94,  "detection": 88,  "residual_ASR": 11}, "plain": {"base_ASR": 100, "detection": 100, "residual_ASR": 0}, "fp": 0},
+    "GPT-4o (OpenAI)":        {"adaptive": {"base_ASR": 94,  "detection": 92,  "residual_ASR": 8},  "plain": {"base_ASR": 100, "detection": 100, "residual_ASR": 0}, "fp": 1},
     "Sonnet 4.5 (Anthropic)": {"adaptive": {"base_ASR": 100, "detection": 92,  "residual_ASR": 8},  "plain": {"base_ASR": 100, "detection": 100, "residual_ASR": 0}, "fp": 0},
-    "GPT-5 (OpenAI)":         {"adaptive": {"base_ASR": 86,  "detection": 100, "residual_ASR": 0},  "plain": {"base_ASR": 97,  "detection": 100, "residual_ASR": 0}, "fp": 8},
-    "Opus 4.8 (Anthropic)":   {"adaptive": {"base_ASR": 92,  "detection": 100, "residual_ASR": 0},  "plain": {"base_ASR": 75,  "detection": 100, "residual_ASR": 0}, "fp": 5}
+    "GPT-5 (OpenAI)":         {"adaptive": {"base_ASR": 86,  "detection": 100, "residual_ASR": 0},  "plain": {"base_ASR": 97,  "detection": 100, "residual_ASR": 0}, "fp": 1},
+    "Opus 4.8 (Anthropic)":   {"adaptive": {"base_ASR": 92,  "detection": 100, "residual_ASR": 0},  "plain": {"base_ASR": 75,  "detection": 100, "residual_ASR": 0}, "fp": 3}
   },
-  "takeaway": "Residual attack success falls from about 20 percent on the weakest model to 0 percent on the strongest, across both providers. Detection of adaptive attacks scales with model capability. Anthropic numbers are over 10 runs (Haiku std ~4, Sonnet stable); OpenAI numbers are 3 runs and will be expanded."
+  "takeaway": "Residual attack success falls from about 20 percent on the weakest model to 0 percent on the strongest, across both providers. Detection of adaptive attacks scales with model capability. All five models are averaged over 10 runs (Haiku std ~4; the other four stable, std ~0)."
 }
